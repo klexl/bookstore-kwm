@@ -1,0 +1,32 @@
+<div class="">
+    <h2 ng-show="isAdmin">Administrationsbereich</h2>
+</div>
+
+<div class="input-group-lg">
+    <input type="text" class="form-control" placeholder="Such das Stocki ..." ng-model="searchText"/>
+</div>
+<br/>
+<div class="table-responsive">
+    <table class="bm_book-list table">
+        <tbody>
+        <tr>
+            <th>Titel</th>
+            <th>Autor</th>
+            <th>ISBN</th>
+            <th ng-show="isAdmin">Sprengsatz</th>
+        </tr>
+        <tr ng-repeat="book in books | orderBy: [title,subtitle] | filter: searchText">
+            <!--<td><a ng-hide="isAdmin" ng-href="#/books/{{ book.isbn }}" ng-bind="book.title | alternatingCase"></a>-->
+            <td ng-hide="isAdmin"><a ng-href="#/books/{{ book.isbn }}" ng-bind="book.title"></a></td>
+            <td ng-show="isAdmin"><a ng-href="#/admin/books/{{ book.isbn }}/edit" ng-bind="book.title"></a></td>
+            <td ng-bind="book.author"></td>
+            <td ng-bind="book.isbn"></td>
+            <td ng-show="isAdmin"><a ng-href="#/admin/books/{{ book.isbn }}/delete">Löschen</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<p class="newBookBtn" ng-show="isAdmin">
+    <a class="btn btn-danger btn-lg" ng-href="#/admin/books/new">Neues Buch anlegen</a>
+</p>

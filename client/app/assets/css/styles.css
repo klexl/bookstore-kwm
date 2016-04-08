@@ -1,0 +1,61 @@
+body {
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+}
+
+nav #bs-example-navbar-collapse-1 {
+    float: right;
+}
+
+header.jumbotron h1 {
+    color: #0f0;
+}
+
+/* ==========================
+    book_list
+========================== */
+input {
+    color: #f00;
+    width: 600px;
+    height: 60px;
+    font-family: "Comic Sans MS";
+    font-size: 18px;
+}
+
+.table-responsive {
+    margin-bottom: 50px;
+}
+
+
+/* ==========================
+    book_details
+========================== */
+.details {
+    margin-bottom: 50px;
+}
+
+.details ul.alert.alert-success {
+    padding: 10px 50px;
+}
+
+/* ==========================
+    book_form
+========================== */
+.book{
+    height: 500px;
+}
+
+.newBookBtn, form {
+    margin-bottom: 100px;
+}
+
+/* ==========================
+    book_delete
+========================== */
+section.container {
+    margin-bottom: 150px;
+}
+
+.deleteContent .btn {
+    margin: 20px 20px 20px 0px;
+}

@@ -1,0 +1,12 @@
+<section class="container">
+    <div class="row">
+        <div class="col-md-12 deleteContent">
+            <h2>Administrationsbereich</h2>
+            <h3>
+                Soll das Buch <strong>"{{ book.title }}"</strong> wirklich gesprengt werden?
+            </h3>
+            <button class="btn btn-success btn-lg" ng-click="deleteBook(book.isbn)">Ja, töte es!</button>
+            <button class="btn btn-danger btn-lg" ng-click="cancel()">Nein, ich will nicht sterben!</button>
+        </div>
+    </div>
+</section>

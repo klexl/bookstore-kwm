@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookstore">
+<head>
+    <meta charset="UTF-8">
+    <title>KWM Bookstore</title>
+    <!-- Das neueste kompilierte und minimierte CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bookstore Kloibhofer</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a ng-href="#/admin/books">Admin</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<header class="jumbotron">
+    <br/>
+    <marquee direction="left" scrollamount="200"><img src="assets/img/rakete.png" width="150"/></marquee>
+    <marquee direction="right" scrollamount="15"><span class="label label-default">Webentwicklung</span></marquee>
+    <marquee scrollamount="50"><h2>fancy</h2></marquee>
+    <marquee scrollamount="50" direction="right"><img src="assets/img/car.png" width="200"></marquee>
+    <marquee scrollamount="10"><h1>Bookstore</h1></marquee>
+    <marquee direction="right" scrollamount="5"><span class="label label-default"> KWM JG 13</span></marquee>
+</header>
+
+<div id="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div ng-view>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/book_details.js"></script>
+<script src="scripts/controllers/book_list.js"></script>
+<script src="scripts/services/book_data.js"></script>
+<script src="scripts/services/constants.js"></script>
+<script src="scripts/controllers/admin_book_list.js"></script>
+<script src="scripts/controllers/admin_delete_book.js"></script>
+<script src="scripts/controllers/admin_new_book.js"></script>
+<script src="scripts/controllers/admin_edit_book.js"></script>
+
+
+</body>
+</html>
