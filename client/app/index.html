@@ -34,12 +34,12 @@
 
 <header class="jumbotron">
     <br/>
-    <marquee direction="left" scrollamount="200"><img src="assets/img/rakete.png" width="150"/></marquee>
-    <marquee direction="right" scrollamount="15"><span class="label label-default">Webentwicklung</span></marquee>
-    <marquee scrollamount="50"><h2>fancy</h2></marquee>
-    <marquee scrollamount="50" direction="right"><img src="assets/img/car.png" width="200"></marquee>
-    <marquee scrollamount="10"><h1>Bookstore</h1></marquee>
-    <marquee direction="right" scrollamount="5"><span class="label label-default"> KWM JG 13</span></marquee>
+    <!--<marquee direction="left" scrollamount="200"><img src="assets/img/rakete.png" width="150"/></marquee>-->
+    <!--<marquee direction="right" scrollamount="15"><span class="label label-default">Webentwicklung</span></marquee>-->
+    <!--<marquee scrollamount="50"><h2>fancy</h2></marquee>-->
+    <!--<marquee scrollamount="50" direction="right"><img src="assets/img/car.png" width="200"></marquee>-->
+    <!--<marquee scrollamount="10"><h1>Bookstore</h1></marquee>-->
+    <!--<marquee direction="right" scrollamount="5"><span class="label label-default"> KWM JG 13</span></marquee>-->
 </header>
 
 <div id="container">
@@ -56,17 +56,22 @@
 
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular-route/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.2.13/angular-cookies.js"></script>
 
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/book_details.js"></script>
 <script src="scripts/controllers/book_list.js"></script>
 <script src="scripts/services/book_data.js"></script>
 <script src="scripts/services/constants.js"></script>
+<script src="scripts/services/flash.service.js"></script>
+<script src="scripts/services/authentication.service.js"></script>
 <script src="scripts/controllers/admin_book_list.js"></script>
 <script src="scripts/controllers/admin_delete_book.js"></script>
 <script src="scripts/controllers/admin_new_book.js"></script>
 <script src="scripts/controllers/admin_edit_book.js"></script>
-
-
+<script src="scripts/controllers/publisher_list.js"></script>
+<script src="scripts/controllers/admin_new_publisher.js"></script>
+<script src="scripts/controllers/admin_edit_publisher.js"></script>
+<script src="scripts/controllers/login_controller.js"></script>
 </body>
 </html>

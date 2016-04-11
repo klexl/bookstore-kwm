@@ -77,7 +77,7 @@ Router::scope('/', function (RouteBuilder $routes) {
 /**
  *  IN UE ERSTELLT
  */
-Router::scope('/api', function($routes) {
+Router::scope('/api', function ($routes) {
     $routes->extensions(['json']);
     $routes->resources('Books');
     $routes->resources('Users');
@@ -102,6 +102,17 @@ Router::scope('/api', function($routes) {
         ['pass' => ['isbn'],
             'isbn' => '[0-9]+'
         ]);
+
+    $routes->connect('/login',
+        ['controller' => 'Login', 'action' => 'index', '[method]' => 'POST'],
+        ['controller' => 'Login', 'action' => 'logout', '[method]' => 'DELETE']);
+});
+
+// wenn auf Seitenebene ein Request kommt -> gehen auf PageController (Kontrolle wenn falsch login oder !loggedIn)
+Router::scope('/', ['controller' => 'Pages'], function($routes) {
+    $routes->extensions('json');
+    $routes->connect('/forbidden', ['action' => 'forbidden']);
+    $routes->connect('/unauthorized', ['action' => 'unauthorized']);
 });
 
 /**

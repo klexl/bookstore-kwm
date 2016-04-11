@@ -30,6 +30,18 @@ bookstoreApp.factory('BookDataService', function($http, $rootScope, CONFIG){
         return $http.get(srv._baseUrl + "api/publishers.json");
     }
 
+    srv.getPublisherById = function (id) {
+        return $http.get(srv._baseUrl + "api/publishers/" + id + ".json");
+    }
+
+    srv.storePublisher = function(publisher) {
+        return $http.post(srv._baseUrl + "api/publishers", publisher);
+    }
+
+    srv.updatePublisher = function(publisher) {
+        return $http.put(srv._baseUrl + "api/publishers/" + publisher.id + ".json", publisher);
+    }
+
     return {
         getBookByIsbn : function(isbn) {
             return srv.getBookByIsbn(isbn);
@@ -48,6 +60,15 @@ bookstoreApp.factory('BookDataService', function($http, $rootScope, CONFIG){
         },
         getPublishers : function () {
             return srv.getPublishers();
+        },
+        getPublisherById : function (id) {
+            return srv.getPublisherById(id);
+        },
+        storePublisher : function (publisher) {
+            return srv.storePublisher(publisher);
+        },
+        updatePublisher : function (id) {
+            return srv.updatePublisher(id);
         }
     }
 });

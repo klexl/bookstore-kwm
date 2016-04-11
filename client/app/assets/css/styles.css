@@ -11,6 +11,9 @@ header.jumbotron h1 {
     color: #0f0;
 }
 
+.row {
+    margin: 0 !important;
+}
 /* ==========================
     book_list
 ========================== */
@@ -26,6 +29,9 @@ input {
     margin-bottom: 50px;
 }
 
+input.btn.btn-success {
+    width: 150px;
+}
 
 /* ==========================
     book_details

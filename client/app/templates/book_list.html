@@ -1,3 +1,27 @@
+<div id="container">
+    <div id="row">
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" ng-submit="login()" ng-controller="LoginCtrl"
+                  ng-show="!loggedIn">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }"
+                     ng-if="flash" ng-bind="flash.message"></div>
+                <div class="form-group">
+                    <input type="text" placeholder="User" class="form-control" ng-model="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control" ng-model="password">
+                </div>
+
+                <input type="submit" class="btn btn-success" value="Login">
+
+            </form>
+            <div class="newBookBtn col-md-3">
+                <a href="#/books" ng-show="loggedIn" ng-controller="LoginCtrl" class="btn btn-primary col-md-3"
+                   ng-click="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="">
     <h2 ng-show="isAdmin">Administrationsbereich</h2>
 </div>
@@ -29,4 +53,6 @@
 </div>
 <p class="newBookBtn" ng-show="isAdmin">
     <a class="btn btn-danger btn-lg" ng-href="#/admin/books/new">Neues Buch anlegen</a>
+    <br><br>
+    <a class="btn btn-danger btn-lg" ng-href="#/admin/publishers">Verlage verwalten</a>
 </p>
