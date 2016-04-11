@@ -7,8 +7,14 @@
  */
 
 namespace App\Controller;
-
+use App\Controller\AppController;
+use Cake\Core\Configure;
+use Cake\Network\Exception\InternalErrorException;
 use Cake\Network\Exception\UnauthorizedException;
+use Cake\Event\Event;
+use Cake\Utility\Text;
+use Cake\Utility\Security;
+use Cake\Auth\DefaultPasswordHasher;
 
 class LoginController extends AppController {
     public function initialize()
