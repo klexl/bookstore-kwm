@@ -71,4 +71,8 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['username']));
         return $rules;
     }
+
+    public function findLogin (Query $query, array $options) {
+        return $query->where($options)->first();
+    }
 }

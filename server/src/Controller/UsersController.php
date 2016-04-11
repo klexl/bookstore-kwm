@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller;
+use Cake\Event\Event;
 
 use App\Controller\AppController;
 
@@ -10,7 +11,11 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
-
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['index', 'view', 'edit', 'add']);
+    }
     /**
      * Index method
      *

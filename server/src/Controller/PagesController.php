@@ -17,6 +17,8 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Network\Exception\UnauthorizedException;
+use Cake\Network\Exception\ForbiddenException;
 
 /**
  * Static content controller
@@ -27,6 +29,21 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow();
+    }
+
+    public function forbidden()
+    {
+        throw new ForbiddenException("Access not allowed");
+    }
+
+    public function unauthorized()
+    {
+        throw new UnauthorizedException("You are not authorized!");
+    }
 
     /**
      * Displays a view

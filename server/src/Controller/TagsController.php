@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Tags Controller
@@ -10,6 +11,11 @@ use App\Controller\AppController;
  */
 class TagsController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['index', 'view', 'tagByName']);
+    }
 
     /**
      * Index method

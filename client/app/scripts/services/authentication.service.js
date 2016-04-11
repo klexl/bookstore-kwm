@@ -3,13 +3,13 @@
 
     // var baseUrl = "http://schoenboeck.kwmhgb.at/bookstore/server/bsServer"
     //var baseUrl = "http://putz.kwmhgb.at/kwm-ba/06-sem/webprog/bookstore/bsServer"
-
+    var baseUrl = 'http://s1310456017.student.kwmhgb.at/bookstore/server/';
 
     bookstoreApp.factory('AuthenticationService', AuthenticationService);
 
     AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout','CONFIG'];
     function AuthenticationService($http, $cookieStore, $rootScope, $timeout, CONFIG) {
-        var baseUrl = CONFIG.serverURL;
+        //var baseUrl = CONFIG.serverURL;
         var service = {};
 
         service.Login = Login;
